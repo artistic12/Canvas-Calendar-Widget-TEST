@@ -1,6 +1,6 @@
 async function fetchCalendarData() {
   // Use the CORS proxy to bypass restrictions
-  const icsUrl = "https://cors-anywhere.herokuapp.com/https://howardcc.instructure.com/feeds/calendars/user_3a1R4w3Vd0DuP7TNtNreCSFO8CZUUJg9Jrfn844P.ics";
+  const icsUrl = "https://calendar.google.com/calendar/embed?src=clq96farh6pfv4m53gb98hr6r3apstkv%40import.calendar.google.com&ctz=America%2FNew_York";
 
   try {
     const response = await fetch(icsUrl);
