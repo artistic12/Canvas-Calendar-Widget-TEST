@@ -1,5 +1,5 @@
 async function fetchCalendarData() {
-  // Use the CORS proxy to bypass restrictions
+  // Use the Google Calendar .ics link to bypass CORS
   const icsUrl = "https://calendar.google.com/calendar/embed?src=clq96farh6pfv4m53gb98hr6r3apstkv%40import.calendar.google.com&ctz=America%2FNew_York";
 
   try {
