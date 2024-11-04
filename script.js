@@ -1,12 +1,18 @@
 async function fetchCalendarData() {
-  const icsUrl = "https://howardcc.instructure.com/feeds/calendars/user_3a1R4w3Vd0DuP7TNtNreCSFO8CZUUJg9Jrfn844P.ics";
+  // Use the CORS proxy to bypass restrictions
+  const icsUrl = "https://cors-anywhere.herokuapp.com/https://howardcc.instructure.com/feeds/calendars/user_3a1R4w3Vd0DuP7TNtNreCSFO8CZUUJg9Jrfn844P.ics";
 
   try {
     const response = await fetch(icsUrl);
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+
     const icsText = await response.text();
     parseICS(icsText);
   } catch (error) {
-    document.getElementById("todo-list").innerText = "Failed to load events.";
+    document.getElementById("todo-list").innerText = "Failed to load events. " + error.message;
     console.error("Error fetching calendar:", error);
   }
 }
